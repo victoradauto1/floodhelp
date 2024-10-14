@@ -42,12 +42,12 @@ export async function openRequest({ title, description, contact, goal }) {
 }
 
 export async function closeRequest(id){
-  contract = getcontract();
+  const contract = getcontract();
   return contract.methods.closeRequest(id).send();
 }
 
 export async function donate(id, donationInBnb){
-  contract = getcontract();
+  const contract = getcontract();
   return contract.methods.closeRequest(id).send({
     value: Web3.utils.toWei(donationInBnb, "ether")
   });
